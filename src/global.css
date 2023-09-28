@@ -1,0 +1,43 @@
+:root {
+  --white-100: #ffffff;
+
+  --blue-dark-800: #002e48;
+  --blue-dark-700: #00a2ff42;
+  --blue-dark-600: #00a3ff;
+  --blue-100: #ddeff9;
+
+  --black-700: #373737;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white-100);
+  color: var(--black-700);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}

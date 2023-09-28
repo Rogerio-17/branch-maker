@@ -1,0 +1,10 @@
+.content {
+    max-width: 33.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.content h1 {
+    font-size: 3.75rem;
+}

@@ -1,0 +1,32 @@
+.types {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 10px;
+    background: var(--blue-100);
+    padding: 10px;
+    height: 4.25rem;
+    margin-top: 3.4rem;
+    margin-bottom: 2.625rem;
+}
+
+.types li a {
+    color: var(--black-700);
+    font-weight: 700;
+    padding: 12px 26px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.types li a:hover {
+    background: var(--blue-dark-600);
+    color: var(--white-100);
+}
+
+.selected {
+    background: var(--blue-dark-600);
+    color: var(--white-100);
+}
