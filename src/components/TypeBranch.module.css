@@ -14,7 +14,7 @@
 .types li a {
     color: var(--black-700);
     font-weight: 700;
-    padding: 12px 26px;
+    padding: 0.75rem 1.625rem;
     background: #fff;
     border-radius: 8px;
     font-size: 1.25rem;
