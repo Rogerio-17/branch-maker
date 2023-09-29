@@ -32,6 +32,11 @@
     overflow-x: hidden;
     padding: 10px;
     font-size: 1.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue-dark-800);
+    text-transform: lowercase;
 }
 
 .copy {

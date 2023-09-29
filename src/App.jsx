@@ -1,13 +1,17 @@
 import "./global.css"
 import style from "./App.module.css"
-import { TypeBranch } from "./components/TypeBranch"
+import {ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
+
 import { FormResult } from "./components/FormResult"
 
 export function App() {
+  
+  
   return (
     <div className={style.content}>
       <h1>Branch Maker</h1>
-      <TypeBranch/>
+      <ToastContainer />
       <FormResult/>
     </div>
   )
