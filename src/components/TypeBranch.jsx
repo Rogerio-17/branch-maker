@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./TypeBranch.module.css";
 
-export function TypeBranch({typeClick}) {
+export function TypeBranch({ typeClick }) {
   const [selectedType, setSelectedType] = useState(null);
 
   //Passa o tipo da branch para o componente pai
@@ -17,7 +17,9 @@ export function TypeBranch({typeClick}) {
           <a
             href=""
             className={selectedType === "Task" ? style.selected : ""}
-            onClick={() => {typeClick("Task"), handleTypeClick("Task")}}
+            onClick={() => {
+              typeClick("Task"), handleTypeClick("Task");
+            }}
           >
             Task
           </a>
@@ -25,7 +27,9 @@ export function TypeBranch({typeClick}) {
         <li>
           <a
             className={selectedType === "Bug" ? style.selected : ""}
-            onClick={() => {typeClick("Bug"), handleTypeClick("Bug")}}
+            onClick={() => {
+              typeClick("Bug"), handleTypeClick("Bug");
+            }}
             href=""
           >
             Bug
@@ -34,7 +38,9 @@ export function TypeBranch({typeClick}) {
         <li>
           <a
             className={selectedType === "Enhancement" ? style.selected : ""}
-            onClick={() => {typeClick("Enhancement"), handleTypeClick("Enhancement")}}
+            onClick={() => {
+              typeClick("Enhancement"), handleTypeClick("Enhancement");
+            }}
             href=""
           >
             Enhancement
@@ -43,7 +49,9 @@ export function TypeBranch({typeClick}) {
         <li>
           <a
             className={selectedType === "Hotfix" ? style.selected : ""}
-            onClick={() => {typeClick("Hotfix"), handleTypeClick("Hotfix")}}
+            onClick={() => {
+              typeClick("Hotfix"), handleTypeClick("Hotfix");
+            }}
             href=""
           >
             Hotfix
