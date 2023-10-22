@@ -48,7 +48,7 @@ export function FormResult() {
     const textCopy = `${commandGit} ${content}`;
 
     //Copia o texto
-    navigator.clipboard.writeText(textCopy.toLowerCase());
+    navigator.clipboard.writeText(textCopy);
     toast.success("Texto copiado com sucesso!");
 
     //Zera valores
@@ -56,17 +56,16 @@ export function FormResult() {
     setBranchName("");
   }
 
+  const branchNameResult = branchName.trim().replace(/\s/g, "-");
   const textContent = !typeSelected
     ? ""
-    : typeSelected +
-      "/" +
-      idBranch +
-      "-" +
-      branchName.trim().replace(/\s/g, "-");
+    : `${typeSelected}/${idBranch}-${branchNameResult}`;
+
+  const buttonDisabled = !typeSelected || !idBranch || !branchName;
 
   return (
     <div className={styles.formresult}>
-      <TypeBranch typeClick={handleTypeClick} />
+      <TypeBranch onTypeSelect={handleTypeClick} />
 
       <label>ID</label>
       <input
@@ -80,17 +79,18 @@ export function FormResult() {
       <label>Branch name</label>
       <input
         type="text"
-        placeholder="Create table filter"
-        title="Nome da sua branch"
+        placeholder="Branch name"
         value={branchName}
         onChange={(e) => handleAddNameBranch(e.target.value)}
       />
 
-      <div ref={divRef} className={styles.task} title="Branch para copia">
+      <div ref={divRef} className={styles.task} data-testid="result-box">
         {textContent}
       </div>
       <div className={styles.copy}>
-        <button onClick={handleCopy}>Copiar</button>
+        <button disabled={buttonDisabled} onClick={handleCopy}>
+          Copy
+        </button>
       </div>
     </div>
   );
