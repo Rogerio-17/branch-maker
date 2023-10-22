@@ -29,7 +29,7 @@ describe("Branch Maker", () => {
 
   it("renders result box", () => {
     renderApp();
-    const resultBox = screen.getByTitle(/branch para copia/i);
+    const resultBox = screen.getByTestId("result-box");
     expect(resultBox).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe("Branch Maker", () => {
 
     fireEvent.click(task);
 
-    const resultBox = screen.getByTitle(/branch para copia/i);
+    const resultBox = screen.getByTestId("result-box");
 
     const inputID = screen.getByRole("spinbutton");
     const inputName = screen.getByRole("textbox");
@@ -55,7 +55,6 @@ describe("Branch Maker", () => {
     fireEvent.change(inputID, { target: { value: "123" } });
     fireEvent.change(inputName, { target: { value: "new app" } });
 
-    // code needs to convert to lowerCase
-    expect(resultBox).toHaveTextContent("Task/123-new-app");
+    expect(resultBox).toHaveTextContent("feat/123-new-app");
   });
 });
