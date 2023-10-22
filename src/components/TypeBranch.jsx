@@ -1,63 +1,45 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import style from "./TypeBranch.module.css";
 
-export function TypeBranch({ typeClick }) {
+const branchTypes = {
+  feat: "Task",
+  bug: "Bug",
+  enh: "Enhancement",
+  hotfix: "Hotfix",
+};
+
+export function TypeBranch({ onTypeSelect }) {
   const [selectedType, setSelectedType] = useState(null);
 
   //Passa o tipo da branch para o componente pai
-  const handleTypeClick = (type) => {
+  const handleTypeClick = (event, type) => {
     event.preventDefault();
     setSelectedType(type);
+    onTypeSelect(type);
   };
 
   return (
     <div>
       <ul className={style.types}>
-        <li>
-          <a
-            href=""
-            className={selectedType === "Task" ? style.selected : ""}
-            onClick={() => {
-              typeClick("Task"), handleTypeClick("Task");
-            }}
-          >
-            Task
-          </a>
-        </li>
-        <li>
-          <a
-            className={selectedType === "Bug" ? style.selected : ""}
-            onClick={() => {
-              typeClick("Bug"), handleTypeClick("Bug");
-            }}
-            href=""
-          >
-            Bug
-          </a>
-        </li>
-        <li>
-          <a
-            className={selectedType === "Enhancement" ? style.selected : ""}
-            onClick={() => {
-              typeClick("Enhancement"), handleTypeClick("Enhancement");
-            }}
-            href=""
-          >
-            Enhancement
-          </a>
-        </li>
-        <li>
-          <a
-            className={selectedType === "Hotfix" ? style.selected : ""}
-            onClick={() => {
-              typeClick("Hotfix"), handleTypeClick("Hotfix");
-            }}
-            href=""
-          >
-            Hotfix
-          </a>
-        </li>
+        {Object.keys(branchTypes).map((key) => (
+          <li key={key}>
+            <a
+              href=""
+              className={selectedType === key ? style.selected : ""}
+              onClick={(event) => {
+                handleTypeClick(event, key);
+              }}
+            >
+              {branchTypes[key]}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
+
+TypeBranch.propTypes = {
+  onTypeSelect: PropTypes.func.isRequired,
+};
