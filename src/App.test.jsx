@@ -56,5 +56,9 @@ describe("Branch Maker", () => {
     fireEvent.change(inputName, { target: { value: "new app" } });
 
     expect(resultBox).toHaveTextContent("feat/123-new-app");
+
+    // large space
+    fireEvent.change(inputName, { target: { value: "new        app" } });
+    expect(resultBox).toHaveTextContent("feat/123-new-app");
   });
 });

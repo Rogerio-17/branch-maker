@@ -56,7 +56,7 @@ export function FormResult() {
     setBranchName("");
   }
 
-  const branchNameResult = branchName.trim().replace(/\s/g, "-");
+  const branchNameResult = branchName.trim().replace(/\s+/g, "-").toLowerCase();
   const textContent = !typeSelected
     ? ""
     : `${typeSelected}/${idBranch}-${branchNameResult}`;
