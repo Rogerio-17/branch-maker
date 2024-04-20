@@ -62,7 +62,7 @@ export default function Home() {
           <div
             ref={divRef}
             data-testid="result-box"
-            className="rounded-2xl bg-gray-50 p-5 font-medium border border-gray-100"
+            className="rounded-2xl bg-gray-50 p-5 font-medium font-mono border border-gray-100"
           >
             {result}
           </div>
