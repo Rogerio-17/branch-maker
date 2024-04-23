@@ -56,13 +56,13 @@ export default function Home() {
               setValue(ev.target.value);
             }}
             placeholder="Past here..."
-            className="p-3 px-5 border-2 border-gray-200 focus:border-blue-300 rounded-lg focus:ring-2 focus:outline-none focus:ring-blue-300"
+            className="p-3 px-5 border-2 border-gray-200 focus:border-blue-300 rounded-lg focus:ring-2 focus:outline-none focus:ring-blue-300 text-black"
           />
 
           <div
             ref={divRef}
             data-testid="result-box"
-            className="rounded-2xl bg-gray-50 p-5 font-medium font-mono border border-gray-100"
+            className="rounded-2xl bg-gray-50 p-5 font-medium font-mono border border-gray-100 text-black"
           >
             {result}
           </div>
